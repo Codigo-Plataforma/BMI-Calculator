@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI calculator</title>
+
+</head>
+
+<body>
+
+    <h1>BMI Calculator</h1>
+    <h2 id="welcome-heading"> Welcome <span id="user">User</span></h2>
+
+    
+        <label for="weight">Enter your weight in kg</label>
+        <input type="number" id="weight">
+
+        <label for="height">Enter your height in m2</label>
+        <input type="number" id="height">
+
+        <button id="submit-btn">Submit</button>
+   
+
+    <p> Calculated BMI:<span id="output"></span> </p>
+
+    <style>
+        label,
+        input {
+            display: block;
+        }
+    </style>
+
+    <script>
+        const user = document.querySelector("#user");
+        const weight_input = document.querySelector("#weight");
+        const height_input = document.querySelector("#height");
+        const btnSubmit = document.getElementById("submit-btn");
+        const output = document.getElementById("output");
+        
+        btnSubmit.addEventListener("click", clickHandler);      
+        function clickHandler() {            
+            let weight =  parseFloat(weight_input.value);
+            let height =  parseFloat(height_input.value);
+            let bmi = weight/height;
+            output.innerHTML = bmi;
+        };
+
+    </script>
+</body>
+
+</html>
